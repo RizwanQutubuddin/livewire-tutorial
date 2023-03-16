@@ -51,12 +51,22 @@
 
 <h3>transfer data</h3>
 <ul>
-    <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire user.profile</li>
-    <li>Http->livewire->user->Profile.php</li>
-    <li>it is used for small component or have to do both work</li>
+    <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire search</li>
+    <li>Http->livewire->search.php</li>
     <li>
-        @livewireStyles
-        <livewire:user.profile>
-        @livewireScripts
+        public function render()
+            {
+                $data = ['name' => 'Rizwan', 'email' => 'rizwan@gmail.com'];
+                return view('livewire.search',['data'=>$data]);
+            }
+    </li>
+    <li>open views->livewire->search.php</li>
+    <li>code it=>
+        <div>
+        <h1>Search Component</h1>
+        @foreach($data as $item)
+            <p>{{$item}}</p>
+        @endforeach
+    </div>
     </li>
 </ul>
