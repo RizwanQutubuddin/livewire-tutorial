@@ -17,9 +17,9 @@
 <ul>
     <li>add page in views folder as user-search.php,open it and write which mension below</li>
     <li>
-        @livewireStyles
-        @livewire('search')
-        @livewireScripts
+        @livewireStyles <br>
+        @livewire('search')<br>
+        @livewireScripts<br>
     </li>
     <li>open routes/web.php and set route which mension below</li>
     <li>Route::view('search', 'livewire.search');</li>
@@ -53,20 +53,23 @@
 <ul>
     <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire search</li>
     <li>Http->livewire->search.php</li>
-    <li>
+    <li><pre>
         public function render()
             {
                 $data = ['name' => 'Rizwan', 'email' => 'rizwan@gmail.com'];
                 return view('livewire.search',['data'=>$data]);
             }
+        </pre>
     </li>
     <li>open views->livewire->search.php</li>
     <li>code it=>
+    <pre>
         <div>
         <h1>Search Component</h1>
         @foreach($data as $item)
             <p>{{$item}}</p>
         @endforeach
     </div>
+    </pre>
     </li>
 </ul>
