@@ -6,12 +6,14 @@ use Livewire\Component;
 
 class Search extends Component
 {
-    public $msg='This is msg';
-
-    public function mount(){
-        $this->msg = 'this is mount funtion';
+    public $msg = 'message from search component';
+    public function updateMsg(){
+        $this->msg = "Message has been update";
     }
-
+    public function updateMsgWithParamter($str)
+    {
+        $this->msg = $str;
+    }
     public function render()
     {
         $data = ['name' => 'Rizwan', 'email' => 'rizwan@gmail.com'];

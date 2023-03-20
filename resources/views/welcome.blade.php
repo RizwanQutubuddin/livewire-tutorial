@@ -10,7 +10,7 @@
     </head>
     <body>
         
-        <livewire:counter/>
+        <livewire:search/>
         @livewireScripts
 
     </body>

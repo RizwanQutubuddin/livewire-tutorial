@@ -102,3 +102,53 @@
         </pre>
     </li>
 </ul>
+
+<h3>Action</h3>
+<ul>
+    <li>web.php
+        <pre>
+           Route::view('welcome')
+        </pre>
+    </li>
+    <li>views->welcome.php
+        <pre>
+            @livewireStyles
+            <livewire:search/>
+            @livewireScripts
+        </pre>
+    </li>
+    <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire search</li>
+    <li>Http->livewire->search.php</li>
+    <li>
+        <pre>
+            class Search extends Component
+            {
+                public $msg = 'message from search component';
+                public function updateMsg(){
+                    $this->msg = "Message has been update";
+                }
+                public function updateMsgWithParamter($str)
+                {
+                    $this->msg = $str;
+                }
+                public function render()
+                {
+                    return view('livewire.search');
+                }
+            }
+        </pre>
+    </li>
+    <li>open views->livewire->search.php</li>
+    <li>code it=>
+        <pre>
+           <div>
+                <h1>Search Component</h1>
+                <h2>{{$msg}}</h2>
+
+                <button wire:click="updateMsg">Update Message</button>
+                <button wire:mouseover="updateMsgWithParamter('asdf')">Update Message with paramenter</button>
+            </div>
+        </pre>
+    </li>
+
+</ul>
