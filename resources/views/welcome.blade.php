@@ -10,7 +10,7 @@
     </head>
     <body>
         
-        <livewire:search/>
+        <livewire:profile/>
         @livewireScripts
 
     </body>

@@ -150,5 +150,116 @@
             </div>
         </pre>
     </li>
+</ul>
 
+<h3>Action</h3>
+<ul>
+    <li>web.php
+        <pre>
+           Route::view('welcome')
+        </pre>
+    </li>
+    <li>views->welcome.php
+        <pre>
+            @livewireStyles
+            @livewire.search
+            @livewireScripts
+        </pre>
+    </li>
+    <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire search</li>
+    <li>Http->livewire->search.php</li>
+    <li>
+        <pre>
+            class Search extends Component
+            {
+                public $msg = 'message from search component';
+                public function updateMsg(){
+                    $this->msg = "Message has been update";
+                }
+                public function updateMsgWithParamter($str)
+                {
+                    $this->msg = $str;
+                }
+                public function render()
+                {
+                    return view('livewire.search');
+                }
+            }
+        </pre>
+    </li>
+    <li>open views->livewire->search.php</li>
+    <li>code it=>
+        <pre>
+           <div>
+                <h1>Search Component</h1>
+                <h2>{{$msg}}</h2>
+
+                <button wire:click="updateMsg">Update Message</button>
+                <button wire:mouseover="updateMsgWithParamter('asdf')">Update Message with paramenter</button>
+            </div>
+        </pre>
+    </li>
+</ul>
+
+
+<h3>Action</h3>
+<ul>
+    <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire profile</li>
+    <li>Http->livewire->profile.php</li>
+    <li>open views->livewire->profile.php</li>
+    <li>code it=>
+        <pre>
+            <div>
+                {{-- The best athlete wants his opponent at his best. --}}
+                <h1>Profile Component</h1>
+                <h3>{{$name}}</h3>
+                <h3>{{$counter}}</h3>
+                <input type="text" wire:model='name'>
+                <button wire:click="updateName">update</button>
+            </div>
+        </pre>
+    </li>
+    <li>web.php
+        <pre>
+           Route::view('welcome')
+        </pre>
+    </li>
+    <li>views->welcome.php
+        <pre>
+            @livewireStyles
+            @livewire.profile
+            @livewireScripts
+        </pre>
+    </li>
+    
+    <li>
+        <pre>
+            class Profile extends Component
+            {
+                public $name = 'Rizwan';
+                public $counter = 0;
+                public function mount() //ready the component then this funciton run automatically.
+                {
+                    $this->name = 'Shabana';
+                }
+                public function updateName() //update the component then this funciton run automatically.
+                {
+                    $this->name = 'Uzaif';
+                }
+                public function hydrate() //update the component then this funciton run automatically.
+                {
+                    $this->counter ++;
+                }
+                public function updated() //update the binding property then this funciton run automatically.
+                {
+                    $this->counter ++;
+                }
+                public function render()
+                {
+                    return view('livewire.profile');
+                }
+            }
+        </pre>
+    </li>
+    
 </ul>
