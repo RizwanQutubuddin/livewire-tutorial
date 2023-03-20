@@ -113,7 +113,7 @@
     <li>views->welcome.php
         <pre>
             @livewireStyles
-            <livewire:search/>
+            @livewire.search
             @livewireScripts
         </pre>
     </li>
