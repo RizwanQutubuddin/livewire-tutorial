@@ -10,7 +10,7 @@
     </head>
     <body>
         
-        <livewire:profile/>
+        <livewire:users/>
         @livewireScripts
 
     </body>
