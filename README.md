@@ -97,6 +97,7 @@
             <div>
                 <h1>Search Component</h1>
                 <p>{{$msg}}</p>
+                <input type="text" wire:model.debounce.1000ms='msg'>
             </div>
         </pre>
     </li>
