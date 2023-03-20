@@ -5,9 +5,6 @@
         @livewireStyles
     </head>
     <body>
-        <livewire:user.profile>
-        <livewire:counter/>
-
         @livewire('search')
         @livewireScripts
     </body>

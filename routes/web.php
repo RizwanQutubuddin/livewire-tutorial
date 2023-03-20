@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Route::view('search', 'user-search');
 
-Route::livewire('counter', 'counter');
+// Route::livewire('counter', 'counter');
 
 

@@ -53,8 +53,9 @@
 <ul>
     <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire search</li>
     <li>Http->livewire->search.php</li>
-    <li><pre>
-        public function render()
+    <li>
+        <pre>
+            public function render()
             {
                 $data = ['name' => 'Rizwan', 'email' => 'rizwan@gmail.com'];
                 return view('livewire.search',['data'=>$data]);
@@ -71,5 +72,32 @@
         @endforeach
     </div>
     </pre>
+    </li>
+</ul>
+
+<h3>property binding</h3>
+<ul>
+    <li>C:\wamp64\www\laravel-tutorial\livewire-tutorial>php artisan make:livewire search</li>
+    <li>Http->livewire->search.php</li>
+    <li>
+        <pre>
+            public $msg='this is public message';
+            public function mount(){ //this function is run On load, 
+                $this->msg = 'this is mount funtion';
+            }
+            public function render()
+            {
+                return view('livewire.search');
+            }
+        </pre>
+    </li>
+    <li>open views->livewire->search.php</li>
+    <li>code it=>
+        <pre>
+            <div>
+                <h1>Search Component</h1>
+                <p>{{$msg}}</p>
+            </div>
+        </pre>
     </li>
 </ul>
