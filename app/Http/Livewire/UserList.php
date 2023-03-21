@@ -7,9 +7,11 @@ use Livewire\Component;
 class UserList extends Component
 {
     public $user;
-    public function mount($user)
+    public $name;
+    public function mount($name)
     {
-        $this->user = $user;
+        // $this->user = $user;
+        $this->name = $name;
     }
     public function render()
     {

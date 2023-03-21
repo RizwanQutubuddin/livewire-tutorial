@@ -1,7 +1,8 @@
 <div>
-    <h1>User Component</h1>
+    <h1>Name Component</h1>
     @foreach($names as $name)
-    <p>@livewire('user-list',['user'=>$name])</p>
+    <p>@livewire('user-list',['name'=>$name])</p>
     @endforeach
-    
+    <h1>User list from Database</h1>
+
 </div>

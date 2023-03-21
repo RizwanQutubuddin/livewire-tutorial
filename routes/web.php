@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\Students;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::view('user', 'user');
-// Route::livewire('counter', 'counter');
+// Route::livewire('user-list', 'user-list-db');
+Route::get('/students', Students::class);
 
 
