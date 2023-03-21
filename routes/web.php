@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::view('user', 'user');
 // Route::livewire('counter', 'counter');
 
 
