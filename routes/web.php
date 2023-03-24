@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Livewire\Students;
+use App\Http\Livewire\Uploads;
+use App\Http\Livewire\Images;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,5 +24,7 @@ Route::get('/', function () {
 Route::view('user', 'user');
 // Route::livewire('user-list', 'user-list-db');
 Route::get('/students', Students::class);
+Route::get('/uploads', Uploads::class);
+Route::get('/upload-images', Images::class);
 
 

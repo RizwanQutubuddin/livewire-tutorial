@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Student;
+use Livewire\WithPagination;
 
 class Students extends Component
 {
@@ -12,6 +13,7 @@ class Students extends Component
     public $last_name;
     public $email;
     public $phone;
+    public $searchTerm;
 
     public function resetInputFields()
     {
@@ -65,9 +67,36 @@ class Students extends Component
             $this->emit('studentUpdated');
         }
     }
+
+    public function deleting($id)
+    {
+        $student = Student::where('id', $id)->first();
+        $this->ids = $student->id;
+        $this->first_name = $student->first_name;
+        $this->last_name = $student->last_name;
+        $this->email = $student->email;
+        $this->phone = $student->phone;
+    }
+
+    public function deleted(){
+        $student = Student::where('id', $this->ids)->delete();
+        if ($student) {
+            session()->flash('message', 'Deleted Successfully!');
+        } else {
+            session()->flash('message', 'No Record found!');
+        }
+        $this->resetInputFields();
+        $this->emit('studentDeleted');
+    }
+
     public function render()
     {
-        $students = Student::orderBy('id','desc')->get();
+        $searchTerm = "%" . $this->searchTerm . "%";
+        $students = Student::where('first_name','LIKE',$searchTerm)
+        ->orWhere('last_name','LIKE',$searchTerm)
+        ->orWhere('email','LIKE',$searchTerm)
+        ->orWhere('phone','LIKE',$searchTerm)
+        ->orderBy('id','desc')->paginate(5);
         return view('livewire.students',['students'=>$students]);
     }
 }

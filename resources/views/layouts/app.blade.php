@@ -19,8 +19,17 @@
             window.livewire.on('studentAdded',()=>{
                 $('#addStudentModal').modal('hide');
             });
-            window.livewire.on('studentupdated',()=>{
-                $('#updateStudentModal').modal('show');
+            window.livewire.on('studentUpdated',()=>{
+                $('#updateStudentModal').modal('hide');
+            });
+            window.livewire.on('studentDeleted',()=>{
+                $('#deleteStudentModal').modal('hide');
+            });
+            window.livewire.on('fileUploaded',()=>{
+                $('#form-upload')[0].reset();
+            });
+            window.livewire.on('imagesUploaded',()=>{
+                $('#images')[0].reset();
             });
         </script>
     </body>
